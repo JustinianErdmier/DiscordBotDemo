@@ -18,7 +18,7 @@ public class CommandHandler : DiscordBotService
     {
         _client.MessageReceived += OnMessageReceived;
         _service.CommandExecuted += OnCommandExecuted;
-        await _service.AddModuleAsync(Assembly.GetEntryAssembly(), _provider);
+        await _service.AddModulesAsync(Assembly.GetEntryAssembly(), _provider);
     }
 
     private async Task OnCommandExecuted(Optional<CommandInfo> commandInfo, ICommandContext commandContext, IResult result)
@@ -30,10 +30,10 @@ public class CommandHandler : DiscordBotService
 
     private async Task OnMessageReceived(SocketMessage socketMessage)
     {
-        if (!(socketMessage is SocketMessage message)) return;
+        if (socketMessage is not SocketUserMessage message) return;
         if (message.Source != MessageSource.User) return;
 
-        var argPos = 0;
+        int argPos = 0;
         var user = message.Author as SocketGuildUser;
         var prefix = DataAccessLayer.GetPrefix(user.Guild.Id);
         if (!message.HasStringPrefix(prefix, ref argPos) && !message.HasMentionPrefix(_client.CurrentUser, ref argPos)) return;

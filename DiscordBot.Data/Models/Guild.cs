@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DiscordBot.Data.Models;
 
-namespace DiscordBot.Data.Models
+public class Guild
 {
-    internal class Guild
-    {
-    }
+    public ulong Id { get; set; }
+    public string Prefix { get; set; } = "!";
 }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DiscordBot.Data.Context;
 
-namespace DiscordBot.Data.Context
+public class DiscordBotDbContext : DbContext
 {
-    public class DiscordBotDbContext
-    {
-    }
+    public DiscordBotDbContext(DbContextOptions options) : base(options) { }
+
+    public DbSet<Guild> Guilds { get; set; }
 }
