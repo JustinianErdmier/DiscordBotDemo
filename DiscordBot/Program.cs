@@ -38,13 +38,13 @@ internal class Program
             })
             .ConfigureServices((context, services) =>
             {
-                services.AddHostedService<CommandHandler>();
-                services.AddHttpClient();
-                services.AddDbContextFactory<DiscordBotDbContext>(options =>
-                options.UseMySql(
-                    context.Configuration.GetConnectionString("Default"),
-                    new MySqlServerVersion(new Version(8, 0, 27))))
-                .AddSingleton<DataAccessLayer>();
+                //services.AddHostedService<CommandHandler>();
+                //services.AddHttpClient();
+                //services.AddDbContextFactory<DiscordBotDbContext>(options =>
+                //options.UseMySql(
+                //    context.Configuration.GetConnectionString("Default"),
+                //    new MySqlServerVersion(new Version(8, 0, 27))))
+                //.AddSingleton<DataAccessLayer>();
             })
             .UseConsoleLifetime();
 
