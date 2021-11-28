@@ -16,4 +16,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DiscordBot.Data\DiscordBot.Data.csproj" />
+  </ItemGroup>
+
 </Project>
