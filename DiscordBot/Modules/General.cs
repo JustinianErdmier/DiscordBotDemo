@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DiscordBot.Modules;
 
-namespace DiscordBot.Modules
+public class General : DiscordBotModuleBase
 {
-    internal class General
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public General(IHttpClientFactory httpClientFactory, DataAccessLayer dataAccessLayer) : base(dataAccessLayer)
     {
+        _httpClientFactory = httpClientFactory;
+    }
+
+    [Command("ping")]
+    [Alias("p")]
+    public async Task PingAsync()
+    {
+        await Context.Channel.Trigger
+            https://github.com/Coding-with-Efehan/Watermelon-DNBDS/blob/master/Watermelon/Modules/General.cs
     }
 }

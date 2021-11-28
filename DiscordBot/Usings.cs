@@ -14,3 +14,5 @@ global using DiscordBot.Services;
 
 // Extended System Usings
 global using static System.Console;
+global using System.Reflection;
+global using System.Net.Http;

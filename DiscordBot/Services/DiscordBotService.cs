@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DiscordBot.Services;
 
-namespace DiscordBot.Services
+public abstract class DiscordBotService : DiscordClientService
 {
-    internal class DiscordBotService
+    public readonly DiscordSocketClient Client;
+    public readonly ILogger<DiscordClientService> Logger;
+    public readonly IConfiguration Configuration;
+    public readonly DataAccessLayer DataAccessLayer;
+
+    public DiscordBotService(DiscordSocketClient client, ILogger<DiscordClientService> logger, IConfiguration configuration, DataAccessLayer dataAccessLayer) : base(client, logger)
     {
+        Client = client;
+        Logger = logger;
+        Configuration = configuration;
+        DataAccessLayer = dataAccessLayer;
     }
 }
