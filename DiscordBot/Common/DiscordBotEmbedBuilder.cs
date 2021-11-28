@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DiscordBot.Common;
 
-namespace DiscordBot.Common
+internal class DiscordBotEmbedBuilder : EmbedBuilder
 {
-    internal class DiscordBotEmbedBuilder
+    public DiscordBotEmbedBuilder()
     {
+        WithColor(new Color(238, 62, 75));
     }
 }

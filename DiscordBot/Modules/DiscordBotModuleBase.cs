@@ -1,12 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DiscordBot.Modules;
 
-namespace DiscordBot.Modules
+public abstract class DiscordBotModuleBase : ModuleBase<SocketCommandContext>
 {
-    internal class DiscordBotModuleBase
+    public readonly DataAccessLayer _dataAccessLayer;
+
+    public string Prefix
     {
+        get
+        {
+            if (string.IsNullOrEmpty(_prefix))
+            {
+                _prefix = _dataAccessLayer.GetPrefix(Context.Guild.Id);
+            }
+
+            return _prefix;
+        }
+    }
+
+    private string _prefix;
+
+    public DiscordBotModuleBase(DataAccessLayer dataAccessLayer)
+    {
+        _dataAccessLayer = dataAccessLayer;
+    }
+
+    public async Task<RestUserMessage> SendEmbedAsync(string title, string description)
+    {
+        var builder = new EmbedBuilder()
+            .WithTitle(title)
+            .WithDescription(description);
+
+        return await Context.Channel.SendMessageAsync(embed: builder.Build());
     }
 }

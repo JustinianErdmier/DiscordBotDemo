@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace DiscordBot.Models;
 
-namespace DiscordBot.Models
+internal static class Converter
 {
-    internal class Converter
+    public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
     {
-    }
+        MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+        DateParseHandling = DateParseHandling.None,
+        Converters =
+        {
+            new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+        },
+    };
 }
