@@ -2,7 +2,7 @@
 
 public abstract class DiscordBotModuleBase : ModuleBase<SocketCommandContext>
 {
-    public readonly DataAccessLayer _dataAccessLayer;
+    public readonly DataAccessLayer DataAccessLayer;
 
     public string Prefix
     {
@@ -10,7 +10,7 @@ public abstract class DiscordBotModuleBase : ModuleBase<SocketCommandContext>
         {
             if (string.IsNullOrEmpty(_prefix))
             {
-                _prefix = _dataAccessLayer.GetPrefix(Context.Guild.Id);
+                _prefix = DataAccessLayer.GetPrefix(Context.Guild.Id);
             }
 
             return _prefix;
@@ -21,7 +21,7 @@ public abstract class DiscordBotModuleBase : ModuleBase<SocketCommandContext>
 
     public DiscordBotModuleBase(DataAccessLayer dataAccessLayer)
     {
-        _dataAccessLayer = dataAccessLayer;
+        DataAccessLayer = dataAccessLayer;
     }
 
     public async Task<RestUserMessage> SendEmbedAsync(string title, string description)

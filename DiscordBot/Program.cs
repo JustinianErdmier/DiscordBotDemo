@@ -34,17 +34,18 @@ internal class Program
             {
                 config.CaseSensitiveCommands = false;
                 config.LogLevel = LogSeverity.Debug;
-                config.DefaultRunMode = RunMode.Sync;
+                config.DefaultRunMode = RunMode.Async;
             })
             .ConfigureServices((context, services) =>
             {
-                //services.AddHostedService<CommandHandler>();
-                //services.AddHttpClient();
-                //services.AddDbContextFactory<DiscordBotDbContext>(options =>
-                //options.UseMySql(
-                //    context.Configuration.GetConnectionString("Default"),
-                //    new MySqlServerVersion(new Version(8, 0, 27))))
-                //.AddSingleton<DataAccessLayer>();
+                services
+                    .AddHostedService<CommandHandler>()
+                    .AddHttpClient()
+                    .AddDbContextFactory<DiscordBotDbContext>(options =>
+                options.UseMySql(
+                    context.Configuration.GetConnectionString("Default"),
+                    new MySqlServerVersion(new Version(8, 0, 27))))
+                .AddSingleton<DataAccessLayer>();
             })
             .UseConsoleLifetime();
 
