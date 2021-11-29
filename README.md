@@ -18,13 +18,6 @@
 -->
 
 
-
-<!-- ReadMe Template Author -->
-<!--
-*** The template I am using tho structure and build this ReadMe was published by othneildrew.
-*** Some text may be carried over if it applies to the current context. 
--->
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -90,6 +83,9 @@ Coding with Efehan. But with the recent release of .NET 6 and changes to the lib
 
 This project was made to showcase how you can easily build a Discord bot in .NET 6, the different things you can do with the bot, and foster a growing
 and supportive community around Discord bot development in .NET. I hope you find this project helpful!
+
+Throughout this project's codebase, I use Xml (extensive markup language) to document the classes, methods, and other important parts of the code. For
+more detailed descriptions as to why and how parts of the code works, please DM me on Twitter or consider joining Coding with Efehan's Discord server.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -185,6 +181,7 @@ Project Link: [https://github.com/JustinErdmier/DiscordBotDemo](https://github.c
 
 * [Efehan's Video Tutorial Series](https://www.youtube.com/playlist?list=PLaqoc7lYL3ZDCDT9TcP_5hEKuWQl7zudR)
 * [Coding with Efehan's Discord Server](https://discord.gg/xCdfreeNas)
+* [Style Cop Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
