@@ -1,5 +1,8 @@
 ﻿namespace DiscordBot.Services;
 
+/// <summary>
+/// The class responsible for handling the commands and various events.
+/// </summary>
 public class CommandHandler : DiscordBotService
 {
     private readonly IServiceProvider _provider;
@@ -7,13 +10,23 @@ public class CommandHandler : DiscordBotService
     private readonly CommandService _service;
     private readonly IConfiguration _configuration;
 
-    public CommandHandler(IServiceProvider provider, DiscordSocketClient client, CommandService service, IConfiguration configuration, ILogger<DiscordClientService> logger, DataAccessLayer dataAccessLayer) : base(client,logger, configuration, dataAccessLayer)
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CommandHandler"/> class.
+    /// </summary>
+    /// <param name="provider">The <see cref="IServiceProvider"/> that should be injected.</param>
+    /// <param name="client">The <see cref="DiscordSocketClient"/> that should be injected.</param>
+    /// <param name="service">The <see cref="CommandService"/> that should be injected.</param>
+    /// <param name="configuration">The <see cref="IConfiguration"/> that should be injected.</param>
+    public CommandHandler(IServiceProvider provider, DiscordSocketClient client, CommandService service, IConfiguration configuration, ILogger<DiscordClientService> logger, DataAccessLayer dataAccessLayer) 
+        : base(client,logger, configuration, dataAccessLayer)
     {
         _provider = provider;
         _client = client;
         _service = service;
         _configuration = configuration;
     }
+
+    /// <inheritdoc/>
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
         _client.MessageReceived += OnMessageReceived;

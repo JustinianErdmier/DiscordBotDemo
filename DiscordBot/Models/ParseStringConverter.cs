@@ -10,8 +10,7 @@ internal class ParseStringConverter : JsonConverter
 
         var value = serializer.Deserialize<string>(reader);
 
-        long l;
-        if (Int64.TryParse(value, out l)) return l;
+        if (long.TryParse(value, out long l)) return l;
 
         throw new Exception("Cannot unmarshal type long");
     }

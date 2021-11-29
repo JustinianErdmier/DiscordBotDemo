@@ -1,5 +1,8 @@
 ﻿namespace DiscordBot;
 
+/// <summary>
+/// The entry point of the bot.
+/// </summary>
 internal class Program
 {
     private static async Task Main()
