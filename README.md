@@ -199,6 +199,6 @@ Project Link: [https://github.com/JustinErdmier/DiscordBotDemo](https://github.c
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
 [stars-url]: https://github.com/JustinErdmier/DiscordBotDemo/stargazers
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: license
+[license-url]: https://github.com/JustinErdmier/DiscordBotDemo/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/justinerdmier/
