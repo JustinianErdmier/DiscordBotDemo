@@ -18,7 +18,7 @@ public class General : DiscordBotModuleBase
     }
 
     [Command("prefix")]
-    public async Task PrefixAsync(DataAccessLayer dataAccessLayer, string prefix = null)
+    public async Task PrefixAsync(string prefix = null)
     {
         if (prefix == null)
         {
@@ -26,7 +26,7 @@ public class General : DiscordBotModuleBase
             return;
         }
 
-        await dataAccessLayer.SetPrefix(Context.Guild.Id, prefix);
+        await DataAccessLayer.SetPrefix(Context.Guild.Id, prefix);
         await ReplyAsync($"The prefix has been set to {prefix}.");
     }
 
